@@ -20,7 +20,7 @@ class Jugador(Entidades):
 
 
 class Enemigo(Entidades):
-    def __init__(self, ataque, defensa, vida, nombre, habilidades=[]):
+    def __init__(self, ataque,piso,peso, defensa, vida, nombre, habilidades=[]):
         super().__init__(ataque, defensa, vida, nombre, habilidades)
 
 
