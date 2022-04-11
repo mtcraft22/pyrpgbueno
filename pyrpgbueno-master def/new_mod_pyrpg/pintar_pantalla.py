@@ -3,12 +3,10 @@ import platform
 
 import declaaraciones  # módulo que incluye las instacias de las entidades y objectos
 import pintar_vara_vida  # importacion de módulo para mostrar la vara de vida dinamica
-
-piso = 1
-aciones = ["atacar", "esquivar", "burla"]
+declaaraciones.J.nombre = input("Introduce tu nombre: ")
 
 
-def actualizar_pantalla(aciones, comentario, enemigo, jugador):
+def actualizar_pantalla(escenario, enemigo, jugador):
     if platform.system() == "Windows":
         os.system("cls")
     else:
