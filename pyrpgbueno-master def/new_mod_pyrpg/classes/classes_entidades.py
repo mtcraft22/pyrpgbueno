@@ -9,7 +9,7 @@ class Entidades:
         self.estado = "Normal"
 
     def atacar(self, destino):
-        destino.vida_act -= (self.ataque + destino.defensa)
+        destino.vida_act -= (self.ataque - destino.defensa)
 
     def cambio_estado(self, destino, estado):
         destino.estado = estado
