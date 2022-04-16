@@ -42,7 +42,7 @@ def actualizar_pantalla(escenario, enemigo, jugador, comentario):
         for i in escenario.aciones:
             print(" ", a, ". ", i)
             a += 1
-    elif escenario == "final":
+    elif escenario.nombre == "final":
         print(" ")
         print(" ", end="")
         pintar_vara_vida.draw_hp_bar(jugador.vida_max, jugador.vida_act, jugador.nombre)
