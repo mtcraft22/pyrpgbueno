@@ -1,12 +1,12 @@
 import classes.classes_entidades
-
+lista_items=[]
 
 class Item:
     def __init__(self, suma, coste, nombre):
         self.suma = suma
         self.coste = coste
         self.nombre = nombre
-
+        lista_items.append(self)
 
 class Poción(Item):
     def __init__(self, suma, coste, nombre):

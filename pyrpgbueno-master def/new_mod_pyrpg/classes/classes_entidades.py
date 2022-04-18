@@ -1,3 +1,6 @@
+
+lista_enemigos = []
+
 class Entidades:
     def __init__(self, nombre, ataque, defensa, vida):
         self.nombre = nombre
@@ -28,7 +31,7 @@ class Enemigos(Entidades):
         super().__init__(nombre, ataque, defensa, vida)
         self.planta_minima = planta
         self.peso = peso
-
+        lista_enemigos.append(self)
 
 class EnemigosComplejos(Enemigos):
     def __init__(self, planta, peso, transformaciones, nombre, ataque, defensa, vida):
