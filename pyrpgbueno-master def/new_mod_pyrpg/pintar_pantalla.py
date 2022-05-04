@@ -1,6 +1,6 @@
 import os
 import platform
-import indicar_acion
+
 
 import pintar_vara_vida  # importación de módulo para mostrar la vara de vida dinamica
 
@@ -28,10 +28,12 @@ def actualizar_pantalla(escenario, enemigo, jugador, comentario):
         print("----------------------------------------------------------------")
         print(f"Ultimo evento: {comentario}")
         print("----------------------------------------------------------------")
-        return indicar_acion.preguntar_acion(escenario.aciones)
-
     elif escenario.nombre == "tienda":
+        print("----------------------------------------------------------------")
         escenario.mostrar_items()
+        print("----------------------------------------------------------------")
+        print(f"Ultimo evento: {comentario}")
+        print("----------------------------------------------------------------")
         a = 1
         for i in escenario.aciones:
             print(" ", a, ". ", i)
