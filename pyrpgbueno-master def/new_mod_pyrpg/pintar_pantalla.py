@@ -34,6 +34,8 @@ def actualizar_pantalla(escenario, enemigo, jugador, comentario):
         print("----------------------------------------------------------------")
         print(f"Ultimo evento: {comentario}")
         print("----------------------------------------------------------------")
+        print(f"Dinero: {jugador.dinero}")
+        print("----------------------------------------------------------------")
         a = 1
         for i in escenario.aciones:
             print(" ", a, ". ", i)

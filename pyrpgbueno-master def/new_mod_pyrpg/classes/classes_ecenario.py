@@ -20,12 +20,12 @@ class Tienda(Escenarios):
         super().__init__(nombre, aciones)
         self.Items_ala_venta = items
 
-
     def mostrar_items(self):
         tabla.field_names = ["Nombre", "Coste", "Puntos de curación"]
         for i in self.Items_ala_venta:
             tabla.add_row([f"{i.nombre}", f"{i.coste}", f"{i.suma}"])
         print(tabla)
+
 
 
 
