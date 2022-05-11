@@ -1,5 +1,5 @@
 import random
-import time
+
 
 
 import declaaraciones
@@ -22,14 +22,24 @@ def combate():
                                                 f" Te hicieron {ene.ataque - declaaraciones.J.defensa} de daño ")
     pintar_pantalla.actualizar_pantalla(declaaraciones.final, ene, declaaraciones.J,
                                         f" final combate, llendo al hub ")
-    time.sleep(3)
+    ene.vida_act = ene.vida_max
+    selecionar()
 
+
+def comprar():
+    pintar_pantalla.actualizar_pantalla(declaaraciones.tienda, None, declaaraciones.J, "Apu: bienvenido al balulaque")
+    acion = indicar_acion.preguntar_acion(declaaraciones.tienda.aciones)
+    if acion == 2:
+        selecionar()
+
+
+def selecionar():
     pintar_pantalla.actualizar_pantalla(declaaraciones.Hub, None, None, None)
     acion = indicar_acion.preguntar_acion(declaaraciones.Hub.aciones)
     if acion == 0:
-        pintar_pantalla.actualizar_pantalla(declaaraciones.tienda, None, declaaraciones.J, "Apu: bienvenido al balulaque")
-        while True:
-            time.sleep(0.001)
+        comprar()
+    if acion == 1:
+        combate()
 
 
 combate()

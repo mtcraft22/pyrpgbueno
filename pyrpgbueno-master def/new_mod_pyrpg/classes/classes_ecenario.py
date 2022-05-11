@@ -1,5 +1,6 @@
 from prettytable import *
 
+
 tabla = PrettyTable()
 
 
@@ -14,6 +15,9 @@ class Combate(Escenarios):
         super().__init__(nombre, aciones)
         self.piso = 1
 
+    def combatir(self):
+        pass
+
 
 class Tienda(Escenarios):
     def __init__(self, items, nombre, aciones):
@@ -21,9 +25,12 @@ class Tienda(Escenarios):
         self.Items_ala_venta = items
 
     def mostrar_items(self):
-        tabla.field_names = ["Nombre", "Coste", "Puntos de curación"]
+        id = 0
+        tabla.clear()
+        tabla.field_names = ["id", "Nombre", "Coste", "Puntos de afectación"]
         for i in self.Items_ala_venta:
-            tabla.add_row([f"{i.nombre}", f"{i.coste}", f"{i.suma}"])
+            id += 1
+            tabla.add_row(f"{id}, f"{i.nombre}", f"{i.coste}", f"{i.suma}")
         print(tabla)
 
 

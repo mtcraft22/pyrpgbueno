@@ -14,8 +14,8 @@ class Entidades:
     def atacar(self, destino):
         destino.vida_act -= (self.ataque - destino.defensa)
 
-    def cambio_estado(self, destino, estado):
-        destino.estado = estado
+    '''def cambio_estado(self, destino, estado):
+        destino.estado = estado'''
 
 
 class Jugador(Entidades):
