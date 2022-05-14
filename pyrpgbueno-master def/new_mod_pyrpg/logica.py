@@ -1,11 +1,11 @@
 import random
 
 
-
 import declaaraciones
 import lista_enemigos_por_nivel
 import pintar_pantalla
 import indicar_acion
+from classes.classes_objetos import lista_items as productos
 
 
 def combate():
@@ -27,8 +27,15 @@ def combate():
 
 
 def comprar():
-    pintar_pantalla.actualizar_pantalla(declaaraciones.tienda, None, declaaraciones.J, "Apu: bienvenido al balulaque")
+    pintar_pantalla.actualizar_pantalla(declaaraciones.tienda, None, declaaraciones.J, "Bienvenido al balulaque")
     acion = indicar_acion.preguntar_acion(declaaraciones.tienda.aciones)
+    if acion == 0:
+        pintar_pantalla.actualizar_pantalla(declaaraciones.tienda, None, declaaraciones.J, "¿Que desea comprar?")
+        item = indicar_acion.preguntar_acion(productos, "Introduce ID del producto")
+        declaaraciones.J.mochila.append(productos[item])
+        pintar_pantalla.actualizar_pantalla(declaaraciones.tienda, None, declaaraciones.J, f"Compraste {productos[item].nombre}")
+        input("Enter para salir: ")
+        comprar()
     if acion == 2:
         selecionar()
 

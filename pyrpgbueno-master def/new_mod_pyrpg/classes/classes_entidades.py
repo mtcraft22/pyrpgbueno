@@ -24,6 +24,7 @@ class Jugador(Entidades):
         self.escudo_max = escudo
         self.escudo_act = escudo
         self.dinero = 0
+        self.mochila = []
 
 
 class Enemigos(Entidades):

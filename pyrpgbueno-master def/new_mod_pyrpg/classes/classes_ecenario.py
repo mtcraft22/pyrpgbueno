@@ -30,7 +30,7 @@ class Tienda(Escenarios):
         tabla.field_names = ["id", "Nombre", "Coste", "Puntos de afectación"]
         for i in self.Items_ala_venta:
             id += 1
-            tabla.add_row(f"{id}, f"{i.nombre}", f"{i.coste}", f"{i.suma}")
+            tabla.add_row([f"{id}", f"{i.nombre}", f"{i.coste}", f"{i.suma}"])
         print(tabla)
 
 

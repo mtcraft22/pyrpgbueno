@@ -32,7 +32,7 @@ def actualizar_pantalla(escenario, enemigo, jugador, comentario):
         print("----------------------------------------------------------------")
         escenario.mostrar_items()
         print("----------------------------------------------------------------")
-        print(f"Ultimo evento: {comentario}")
+        print(f"Apu: {comentario}")
         print("----------------------------------------------------------------")
         print(f"Dinero: {jugador.dinero}")
         print("----------------------------------------------------------------")
