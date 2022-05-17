@@ -15,10 +15,6 @@ class Combate(Escenarios):
         super().__init__(nombre, aciones)
         self.piso = 1
 
-    def combatir(self):
-        pass
-
-
 class Tienda(Escenarios):
     def __init__(self, items, nombre, aciones):
         super().__init__(nombre, aciones)
@@ -30,7 +26,7 @@ class Tienda(Escenarios):
         tabla.field_names = ["id", "Nombre", "Coste", "Puntos de afectación"]
         for i in self.Items_ala_venta:
             id += 1
-            tabla.add_row([f"{id}", f"{i.nombre}", f"{i.coste}", f"{i.suma}"])
+            tabla.add_row([f"{id}",f"{i.nombre}",f"{i.coste}",f"{i.suma}"])
         print(tabla)
 
 

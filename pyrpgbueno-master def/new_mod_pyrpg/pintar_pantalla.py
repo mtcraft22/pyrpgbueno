@@ -40,6 +40,17 @@ def actualizar_pantalla(escenario, enemigo, jugador, comentario):
         for i in escenario.aciones:
             print(" ", a, ". ", i)
             a += 1
+    elif escenario.nombre == "mochila":
+        print("----------------------------------------------------------------")
+        escenario.mostrar_items()
+        print("----------------------------------------------------------------")
+        print(f"{comentario}")
+        print("----------------------------------------------------------------")
+        
+        a = 1
+        for i in escenario.aciones:
+            print(" ", a, ". ", i)
+            a += 1
     elif escenario.nombre == "Hub":
         print("seleccione destino: ")
         a = 1

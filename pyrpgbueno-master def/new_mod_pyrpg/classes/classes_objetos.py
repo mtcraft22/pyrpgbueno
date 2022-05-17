@@ -14,7 +14,8 @@ class Poción(Item):
 
     def usar(self, entidad):
         entidad.vida_act += self.suma
-
+        if entidad.vida_act > entidad.vida_max:
+            entidad.vida_act =  entidad.vida_max
 
 class Escudo(Item):
     def __init__(self, suma, coste, nombre):
@@ -24,4 +25,4 @@ class Escudo(Item):
         if type(entidad) == classes.classes_entidades.Jugador:
             entidad.escudo_act += self.suma
         else:
-            raise TypeError("Esta entidad no tiene la carasteristica 'escudo'")
+            raise TypeError("Esta entidad no tiene la carasteristica <escudo>")

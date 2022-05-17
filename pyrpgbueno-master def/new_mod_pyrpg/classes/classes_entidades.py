@@ -1,4 +1,7 @@
+from prettytable import *
 
+
+tabla = PrettyTable()
 lista_enemigos = []
 
 class Entidades:
@@ -21,17 +24,27 @@ class Entidades:
 class Jugador(Entidades):
     def __init__(self, escudo, nombre, ataque, defensa, vida):
         super().__init__(nombre, ataque, defensa, vida)
+        self.mochila = []
         self.escudo_max = escudo
         self.escudo_act = escudo
         self.dinero = 0
-        self.mochila = []
+    def mostrar_items(self):
+        id = 0
+        tabla.clear()
+        tabla.field_names = ["id", "Nombre","Puntos de afectación"]
+        for i in self.Items_ala_venta:
+            id += 1
+            tabla.add_row([f"{id}",f"{i.nombre}",f"{i.suma}"])
+        print(tabla)
 
 
 class Enemigos(Entidades):
-    def __init__(self, planta, peso, nombre, ataque, defensa, vida):
+    def __init__(self, planta, peso, nombre, ataque, defensa, vida, coin_max, coin_min):
         super().__init__(nombre, ataque, defensa, vida)
         self.planta_minima = planta
         self.peso = peso
+        self.max_coin= coin_max
+        self.min_coin = coin_min
         lista_enemigos.append(self)
 
 class EnemigosComplejos(Enemigos):
